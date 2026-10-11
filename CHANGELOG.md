@@ -17,3 +17,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Native translations through Hytale language files: English (native) and French.
 - Village logo and mod icon.
 - GitHub Actions build for every module, with the jars uploaded as an artifact.
+- Automated GitHub releases: pushing a `vX.Y.Z` tag on `main` builds the jars and publishes them with the matching changelog section.
