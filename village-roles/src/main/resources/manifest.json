@@ -1,0 +1,26 @@
+{
+    "Group": "Gevail",
+    "Name": "Village-Roles",
+    "Version": "1.0.0",
+    "Description": "Classic Werewolf roles for Village (Werewolf, Seer, Witch, Hunter...).",
+    "Authors": [
+        {
+            "Name": "Gevail"
+        }
+    ],
+    "Website": "https://github.com/Village-Hytale/Village",
+    "ServerVersion": ">=0.6.8 <0.7.0",
+    "Dependencies": {
+        "Hytale:AssetModule": "*",
+        "Gevail:Village-Core": "*"
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "dev.gevail.village.roles.VillageRolesPlugin",
+    "IncludesAssetPack": false,
+    "UpdateChecker": {
+        "CurseForge": ""
+    }
+}

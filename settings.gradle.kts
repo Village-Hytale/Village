@@ -15,4 +15,4 @@ plugins {
 
 rootProject.name = "Village"
 
-include("village-core")
+include("village-core", "village-roles")

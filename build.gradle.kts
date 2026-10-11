@@ -5,7 +5,7 @@ plugins {
 }
 
 hytaleWorkspace {
-    modProjects = listOf(":village-core")
+    modProjects = listOf(":village-core", ":village-roles")
     hostProject = ":village-core"
     // Shared defaults inherited by every module's hytaleTools block
     manifestGroup = property("manifest_group").toString()
