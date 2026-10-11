@@ -3,6 +3,8 @@
 # {name} is a value inserted by the plugin: keep the braces untouched.
 
 # === Core ===
+# Sent to administrators (permission village.admin.notify) when they join
+core.status = Village {version} is running. Modules: {modules}
 # Sent to administrators when a module is (re)loaded while the server is running
 core.module.loaded = {module} {version} loaded.
 core.module.reloaded = {module} {version} reloaded.

@@ -3,8 +3,10 @@ package dev.gevail.village.core;
 import com.hypixel.hytale.server.core.HytaleServer;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.event.events.BootEvent;
+import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import dev.gevail.village.core.listener.PlayerReadyListener;
 import dev.gevail.village.core.log.Banner;
 import dev.gevail.village.core.module.ModuleRegistry;
 import dev.gevail.village.core.notify.AdminNotifier;
@@ -79,6 +81,9 @@ public class VillageCorePlugin extends JavaPlugin {
         // Printed once the server has fully booted, so the banner is the last thing in the startup log
         getEventRegistry().register(BootEvent.class, event ->
                 Banner.print(getLogger(), "Werewolf plugin version " + version + " loaded!", modules.describe()));
+
+        PlayerReadyListener playerReadyListener = new PlayerReadyListener(this);
+        getEventRegistry().registerGlobal(PlayerReadyEvent.class, playerReadyListener::onPlayerReady);
     }
 
     @Override

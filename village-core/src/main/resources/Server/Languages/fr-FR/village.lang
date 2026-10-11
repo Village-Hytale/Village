@@ -3,6 +3,8 @@
 # {nom} est une valeur insérée par le plugin : ne pas modifier ce qui est entre accolades.
 
 # === Core ===
+# Envoyé aux administrateurs (permission village.admin.notify) à leur connexion
+core.status = Village {version} est actif. Modules : {modules}
 # Envoyé aux administrateurs quand un module est (re)chargé serveur lancé
 core.module.loaded = {module} {version} chargé.
 core.module.reloaded = {module} {version} rechargé.
