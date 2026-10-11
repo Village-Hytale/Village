@@ -1,7 +1,7 @@
 // Root project: orchestrates the Village modules (no code here)
 plugins {
-    id("com.azuredoom.hytale-workspace") version "1.+"
-    id("com.azuredoom.hytale-tools") version "1.+" apply false
+    id("com.azuredoom.hytale-workspace") version "1.0.51"
+    id("com.azuredoom.hytale-tools") version "1.0.51" apply false
 }
 
 hytaleWorkspace {
