@@ -1,7 +1,9 @@
 package dev.gevail.village.core;
 
+import com.hypixel.hytale.server.core.event.events.BootEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import dev.gevail.village.core.log.Banner;
 
 import javax.annotation.Nonnull;
 
@@ -36,11 +38,10 @@ public class VillageCorePlugin extends JavaPlugin {
     @Override
     protected void setup() {
         version = getManifest().getVersion().toString();
-    }
 
-    @Override
-    protected void start() {
-        getLogger().atInfo().log("%s %s loaded.", MODULE_NAME, version);
+        // Printed once the server has fully booted, so the banner is the last thing in the startup log
+        getEventRegistry().register(BootEvent.class, event ->
+                Banner.print(getLogger(), "Werewolf plugin version " + version + " loaded!"));
     }
 
     @Override
