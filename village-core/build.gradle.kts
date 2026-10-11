@@ -18,7 +18,7 @@ hytaleTools {
     mainClass = "dev.gevail.village.core.VillageCorePlugin"
     modDescription = "Village core engine: games, phases, players, votes and role registry."
     manifestDependencies = "Hytale:AssetModule=*"
-    includesPack = false
+    includesPack = true
 }
 
 tasks.named<Jar>("jar") {

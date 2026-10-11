@@ -1,0 +1,8 @@
+# Village - Français
+# Traduction de en-US/village.lang : mêmes clés, seul le texte après "=" change.
+# {nom} est une valeur insérée par le plugin : ne pas modifier ce qui est entre accolades.
+
+# === Core ===
+# Envoyé aux administrateurs quand un module est (re)chargé serveur lancé
+core.module.loaded = {module} {version} chargé.
+core.module.reloaded = {module} {version} rechargé.

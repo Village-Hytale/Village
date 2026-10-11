@@ -1,11 +1,13 @@
 package dev.gevail.village.core;
 
 import com.hypixel.hytale.server.core.HytaleServer;
+import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.event.events.BootEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import dev.gevail.village.core.log.Banner;
 import dev.gevail.village.core.module.ModuleRegistry;
+import dev.gevail.village.core.notify.AdminNotifier;
 
 import javax.annotation.Nonnull;
 
@@ -14,6 +16,9 @@ import javax.annotation.Nonnull;
  *
  * This class only wires the plugin together; the actual logic lives in dedicated classes.
  * Other Village modules access it through {@link #get()} and declare themselves with {@link #registerModule}.
+ *
+ * Player-facing texts are translation keys ("village.*") defined in
+ * resources/Server/Languages/{language}/village.lang (en-US is the native language).
  */
 public class VillageCorePlugin extends JavaPlugin {
 
@@ -47,7 +52,7 @@ public class VillageCorePlugin extends JavaPlugin {
      * Called by every Village module from its start() method.
      *
      * During server startup nothing is printed here: a single banner is printed once the server has booted.
-     * Afterwards (/plugin reload or /plugin load), a banner is printed for the module.
+     * Afterwards (/plugin reload or /plugin load), a banner is printed and administrators are notified.
      */
     public void registerModule(String name, String moduleVersion) {
         boolean reloaded = modules.register(name, moduleVersion);
@@ -57,6 +62,9 @@ public class VillageCorePlugin extends JavaPlugin {
 
         String state = reloaded ? "reloaded" : "loaded";
         Banner.print(getLogger(), name + " " + moduleVersion + " " + state + "!", modules.describe());
+        AdminNotifier.broadcast(Message.translation("village.core.module." + state)
+                .param("module", name)
+                .param("version", moduleVersion));
     }
 
     /** Called by every Village module from its shutdown() method. */

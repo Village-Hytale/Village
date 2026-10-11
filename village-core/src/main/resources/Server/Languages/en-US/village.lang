@@ -1,0 +1,8 @@
+# Village - English (native language)
+# Keys are used in code as "village.<key>": the file name is the prefix.
+# {name} is a value inserted by the plugin: keep the braces untouched.
+
+# === Core ===
+# Sent to administrators when a module is (re)loaded while the server is running
+core.module.loaded = {module} {version} loaded.
+core.module.reloaded = {module} {version} reloaded.
