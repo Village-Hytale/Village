@@ -9,6 +9,9 @@ A Werewolf social deduction minigame for Hytale: secret roles, deadly nights, vi
 
 > **Status:** early development. The project foundation is in place; game features are coming.
 
+The rules of the game (roles, composition, phases, votes, timers, victory) are described in
+[docs/game-rules.md](docs/game-rules.md).
+
 ## Modules
 
 | Module | Jar | Purpose |
