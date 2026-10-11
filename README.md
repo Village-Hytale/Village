@@ -92,6 +92,35 @@ Reload a module without restarting the server:
 
 Every module must stop everything it started in `shutdown()` so reloads stay clean.
 
+## Branches and releases
+
+```
+feat/...  fix/...  ──PR──▶  develop  ──release PR──▶  main  ──tag vX.Y.Z──▶  GitHub release
+```
+
+- **`main`** only contains released versions. Nothing is committed to it directly.
+- **`develop`** is the integration branch (default branch). Every change lands here through a pull request.
+- **Work branches** start from `develop` and are named after the change type:
+  `feat/…`, `fix/…`, `docs/…`, `ci/…`, `build/…`, `refactor/…`.
+- Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat(core): …`, `fix(roles): …`).
+
+### Publishing a version
+
+Versions are decided by the maintainer; nothing is released automatically.
+
+1. On a `release/X.Y.Z` branch from `develop`: set `version = X.Y.Z` in `gradle.properties` and rename
+   `[Unreleased]` to `[X.Y.Z] - YYYY-MM-DD` in `CHANGELOG.md`.
+2. Merge it into `develop`, then open a pull request from `develop` to `main` and merge it.
+3. Tag the release commit on `main` and push the tag:
+   ```bash
+   git tag vX.Y.Z
+   git push origin vX.Y.Z
+   ```
+
+The **Release** workflow then checks that the tag matches the project version, the tagged commit is on `main`
+and `CHANGELOG.md` has a section for that version, builds every module and publishes the
+**Village vX.Y.Z** release with the jars and the changelog section as notes.
+
 ## Contact
 
 Questions or ideas? Reach out on Discord (**Gevail**), directly or through the official Hytale Discord.
