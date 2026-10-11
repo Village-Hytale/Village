@@ -1,0 +1,25 @@
+{
+    "Group": "Gevail",
+    "Name": "Village-Core",
+    "Version": "1.0.0",
+    "Description": "Village core engine: games, phases, players, votes and role registry.",
+    "Authors": [
+        {
+            "Name": "Gevail"
+        }
+    ],
+    "Website": "https://github.com/Village-Hytale/Village",
+    "ServerVersion": ">=0.6.8 <0.7.0",
+    "Dependencies": {
+        "Hytale:AssetModule": "*"
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "dev.gevail.village.core.VillageCorePlugin",
+    "IncludesAssetPack": false,
+    "UpdateChecker": {
+        "CurseForge": ""
+    }
+}
